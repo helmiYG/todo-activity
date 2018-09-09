@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./asset/css/login.css">
+</head>
+
+<body>
+    <h1>ToDo Activities</h1>
+    <div class="container">
+        <div class="message signup">
+            <div class="btn-wrapper">
+                <button class="button" id="login"> Sign Up</button>
+                <button class="button" id="signup">Login</button>
+            </div>
+        </div>
+        <div class="form form--login">
+            <div class="form--heading">Welcome back! </div>
+            <form autocomplete="off">
+                <input type="text" placeholder="Email" id="email1">
+                <input type="password" placeholder="Password" id="password1">
+                <button class="button" type="button" onclick="signin()">Login</button>
+
+                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                </fb:login-button>
+            </form>
+        </div>
+        <div class="form form--signup">
+            <div class="form--heading">Welcome! Sign Up</div>
+            <form autocomplete="off">
+                <input type="text" placeholder="Name" id="name">
+                <input type="text" name="city" placeholder="City " id="city">
+                <input type="email" placeholder="Email" id="email">
+                <input type="password" placeholder="Password" id="password">
+                <button class="button" type="button" onclick="signup()">Sign Up</button>
+            </form>
+        </div>
+
+    </div>
+    <script src="./asset/js/login.js"></script>
+</body>
+
+</html>

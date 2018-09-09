@@ -1,0 +1,294 @@
+.city {
+  position: relative;
+  color: #343434;
+  font-family: roboto;
+  font-size: 2em;
+  width: 92%;
+  padding: 4%;
+  display: block;
+  float: left;
+  background: #fefefe;
+}
+
+.text {
+  position: absolute;
+  font-family: roboto;
+  font-size: 5em;
+  bottom: 0px;
+  left: 10px;
+  z-index: 3;
+}
+.text:after {
+  content: '°C';
+  font-size: 30px;
+  float: right;
+  position: relative;
+  top: 12px;
+}
+
+.day {
+  background: #bbdefb;
+  color: #343434;
+}
+
+.night {
+  background: #2c3e50;
+  color: #ababab;
+}
+
+.rainyday {
+  background: #596e78;
+  color: #ababab;
+}
+
+.rainynight {
+  background: #5d86a4;
+  color: #ababab;
+}
+
+.stormday {
+  -webkit-animation: lightning 5s ease infinite;
+          animation: lightning 5s ease infinite;
+  color: #ababab;
+}
+
+.cloudy {
+  height: 100%;
+  display: block;
+}
+.cloudy .moon {
+  left: 130px;
+  top: -100px;
+}
+
+.cloud {
+  display: block;
+  background: #fafafa;
+  position: relative;
+  margin-top: 80px;
+  width: 250px;
+  height: 100px;
+  border-radius: 50px;
+  -webkit-animation: reveal 1s ease, slide 1s ease;
+          animation: reveal 1s ease, slide 1s ease;
+}
+.cloud:before {
+  content: "";
+  background: #fafafa;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+  left: 30px;
+  top: -60px;
+  -webkit-animation: reveal 0s ease, slide 1s ease;
+          animation: reveal 0s ease, slide 1s ease;
+}
+
+.sol, .moon {
+  background: #ffe082;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  position: absolute;
+  top: -60px;
+  left: 100px;
+  z-index: -2;
+  -webkit-animation: slide 1.5s ease-out 1s, reveal 1.5s ease both 1s;
+          animation: slide 1.5s ease-out 1s, reveal 1.5s ease both 1s;
+}
+
+.moon {
+  background: #eaeaea;
+}
+.moon:before {
+  content: '';
+  left: 30px;
+  background: #2c3e51;
+  width: 120px;
+  height: 120px;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: -30px;
+}
+
+.clear {
+  display: none;
+  height: 100%;
+}
+.clear .sol, .clear .moon {
+  position: relative;
+  margin-right: 0;
+  top: 35px;
+  left: 60px;
+}
+
+.shine, .rain {
+  width: 40px;
+  height: 10px;
+  background: #ffe082;
+  position: absolute;
+  border-radius: 5px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  left: 45px;
+  top: -31px;
+  -webkit-animation: reveal 2s ease 1.5s both;
+          animation: reveal 2s ease 1.5s both;
+}
+
+.shine:nth-child(1), .rain:nth-child(1) {
+  left: 95px;
+  -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
+  top: -17px;
+  -webkit-animation: reveal 2s ease 2s both;
+          animation: reveal 2s ease 2s both;
+}
+
+.shine:nth-child(2), .rain:nth-child(2) {
+  left: 130px;
+  -webkit-transform: rotate(160deg);
+          transform: rotate(160deg);
+  top: 20px;
+  -webkit-animation: reveal 2s ease 2.5s both;
+          animation: reveal 2s ease 2.5s both;
+}
+
+.rain {
+  background: #89C4F4;
+  -webkit-transform: rotate(110deg);
+          transform: rotate(110deg);
+  top: 130px;
+  left: 30px;
+  -webkit-animation: reveal 2s ease 1.5s both, sparkle 1s ease 2.5s infinite;
+          animation: reveal 2s ease 1.5s both, sparkle 1s ease 2.5s infinite;
+}
+.rain:nth-child(1) {
+  -webkit-transform: rotate(110deg);
+          transform: rotate(110deg);
+  left: 80px;
+  top: 130px;
+  -webkit-animation: reveal 2s ease 2s both, sparkle 1s ease 3s infinite;
+          animation: reveal 2s ease 2s both, sparkle 1s ease 3s infinite;
+}
+.rain:nth-child(2) {
+  -webkit-transform: rotate(110deg);
+          transform: rotate(110deg);
+  left: 130px;
+  top: 130px;
+  -webkit-animation: reveal 2s ease 2.5s both, sparkle 1s ease 3.5s infinite;
+          animation: reveal 2s ease 2.5s both, sparkle 1s ease 3.5s infinite;
+}
+.rain:nth-child(3) {
+  left: 180px;
+  -webkit-animation: reveal 2s ease 3s both, sparkle 1s ease 4s infinite;
+          animation: reveal 2s ease 3s both, sparkle 1s ease 4s infinite;
+}
+
+.rainy {
+  height: 100%;
+  display: none;
+}
+.rainy .cloud {
+  margin-top: 40px;
+  background: #ABB7B7;
+}
+.rainy .cloud:before {
+  background: #ABB7B7;
+}
+
+.storm {
+  display: none;
+}
+.storm .cloud {
+  margin-top: 40px;
+  background: #657171;
+}
+.storm .cloud:before {
+  background: #657171;
+}
+
+.hazeday {
+  background: #bbc4c8;
+}
+
+.haze {
+  display: none;
+}
+.haze .cloud {
+  margin-top: 70px;
+}
+
+@-webkit-keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+@-webkit-keyframes slide {
+  0% {
+    margin-left: -10px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+@keyframes slide {
+  0% {
+    margin-left: -10px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+@-webkit-keyframes lightning {
+  0%, 35%, 50%, 70%, 100% {
+    background: #3b505a;
+  }
+  45%, 55% {
+    background: #637882;
+  }
+}
+@keyframes lightning {
+  0%, 35%, 50%, 70%, 100% {
+    background: #3b505a;
+  }
+  45%, 55% {
+    background: #637882;
+  }
+}
+@media screen and (max-width: 340px) {
+  .container {
+    width: 100%;
+  }
+}
